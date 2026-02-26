@@ -20,6 +20,10 @@ DATABASE_URL = os.environ.get(
     "postgresql://neondb_owner:npg_O17gXTBMDEch@ep-super-art-a13f862y-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require",
 )
 
+# Normalize to use psycopg (psycopg3) driver with SQLAlchemy
+if DATABASE_URL.startswith("postgresql://"):
+    DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+psycopg://", 1)
+
 # SQLAlchemy config
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
