@@ -38,7 +38,7 @@ db.init_app(app)
 migrate = Migrate(app, db)
 jwt.init_app(app)
 CORS(app,
-     origins=["http://localhost:3000", "http://192.168.1.168:8000/", "http://192.168.1.168:8000", "http://192.168.1.168:3000/", "http://192.168.1.168:3000", "https://menu-frontend-coral.vercel.app/"],
+     origins=["http://localhost:3000", "http://192.168.1.168:8000/", "http://192.168.1.168:8000", "http://192.168.1.168:3000/", "http://192.168.1.168:3000", "https://menu-frontend-coral.vercel.app/", "https://menu-frontend-coral.vercel.app"],
      methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
      allow_headers=["Content-Type", "Authorization"],
      expose_headers=["Set-Cookie"],
